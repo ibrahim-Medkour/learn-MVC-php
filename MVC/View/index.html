@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Gestion des genres | Cinéclub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page-shell">
+        <header class="page-header">
+            <p class="eyebrow">Cinéclub · Administration</p>
+            <h1>Genres de films</h1>
+            <p class="intro">Organisez les catégories qui donnent le ton à votre collection.</p>
+        </header>
+
+        <section class="panel form-panel" aria-labelledby="add-heading">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">Nouvelle catégorie</p>
+                    <h2 id="add-heading">Ajouter un genre</h2>
+                </div>
+                <span class="section-icon" aria-hidden="true">+</span>
+            </div>
+            <form id="genre-form" novalidate>
+                <label for="nom">Nom du genre</label>
+                <div class="form-row">
+                    <input
+                        id="nom"
+                        name="nom"
+                        type="text"
+                        maxlength="100"
+                        placeholder="Ex. Science-fiction"
+                        autocomplete="off"
+                        required
+                    >
+                    <button id="submit-button" type="submit">
+                        <span class="button-spinner" aria-hidden="true"></span>
+                        <span class="button-label">Ajouter</span>
+                    </button>
+                </div>
+                <p class="field-hint">Un nom court et clair facilite le classement.</p>
+            </form>
+        </section>
+
+        <section class="panel list-panel" aria-labelledby="list-heading">
+            <div class="section-heading list-heading">
+                <div>
+                    <p class="section-label">Votre collection</p>
+                    <h2 id="list-heading">Genres enregistrés</h2>
+                </div>
+                <span id="genre-count" class="count-badge">—</span>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nom du genre</th>
+                        </tr>
+                    </thead>
+                    <tbody id="genre-list">
+                        <tr>
+                            <td colspan="2" class="table-message">Chargement des genres…</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+    </main>
+</body>
+</html>
