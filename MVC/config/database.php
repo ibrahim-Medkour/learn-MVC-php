@@ -13,7 +13,7 @@ function getPDOConnection(): PDO
     $host = '127.0.0.1';
     $database = 'gestion_films';
     $username = 'root';
-    $password = "B009139.";
+    $password = "009139B";
     $charset = 'utf8mb4';
 
     // Data Source Name
